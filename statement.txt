@@ -1,1 +1,18 @@
 14708689 - Orla Cullen
+
+
+Part 1
+Enter Dimension
+Hop to a point
+Count amount of hops to finish
+
+Die Statistics
+count total number of throws
+out of the throws display display  what pefrcentage of the throws were North South East or West
+
+
+Part 2
+Enter Dimension
+Enter number of times to be run display on each run  Kangaroo, hops and Zigzagaroo hops
+
+Get average  hops Kangaroo took  , average  hops Zigzagaroo took
