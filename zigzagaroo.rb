@@ -1,0 +1,2 @@
+class Zigzagaroo < Kangaroo
+end

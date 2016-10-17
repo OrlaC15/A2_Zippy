@@ -1,0 +1,2 @@
+class CompassDice < Dice
+end
