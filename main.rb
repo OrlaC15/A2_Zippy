@@ -8,4 +8,5 @@ class Main
   puts 'Enter dimension of the Grid for Part I(>=1):'
   grid.dimension = gets.to_i
 
+
 end
