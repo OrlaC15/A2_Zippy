@@ -32,31 +32,31 @@ class Statistics
   end
 
   def average
-    total= 100/total_throws
-    total.to_i
+
+
   end
 
   def north_average
-    north =@table.values_at(:north).join.to_i
-    north = north *average
+    north =@table.values_at(:north).join.to_f
+    north = north/(total_throws)*100
     Percentage.new(north)
   end
 
   def east_average
-    east =@table.values_at(:east).join.to_i
-    east = east *average
+    east =@table.values_at(:east).join.to_f
+    east =east/(total_throws)*100
     Percentage.new(east)
   end
 
   def west_average
-    west =@table.values_at(:west).join.to_i
-    west = west *average
+    west =@table.values_at(:west).join.to_f
+    west = west/(total_throws)*100
     Percentage.new(west)
   end
 
   def south_average
-    south =@table.values_at(:south).join.to_i
-    south = south *average
+    south =@table.values_at(:south).join.to_f
+    south = south/(total_throws)*100
     Percentage.new(south)
   end
 

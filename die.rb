@@ -1,18 +1,15 @@
-require_relative 'statistics'
+require_relative 'statistics.rb'
 class Die
-  attr_accessor :side, :total
+  attr_accessor :side
 
   def initialize
     @side
-    @total= 0
-   @stats= Statistics.new
+
 
   end
 
   def roll
-    @total= @total+1
-    number = Random.rand(4)
-    @stats.update_table number
+    Random.rand(4)
   end
 
   def throw
@@ -24,23 +21,9 @@ class Die
         @side = :east
       when 3
         @side = :south
-
       else
         @side = :west
     end
-  end
-
-  def total_throws
-    @total
-  end
-  def average
-    total_throws*100
-  end
-  def to_s
-    puts 'Dice Statistics:'
-    puts "Table : #{@stats.print_table}"
-    puts "Total throws : #{total_throws}"
-    #  puts "North: #{@table.values_at(:north)/average}  South: #{@table.values_at(:south)/average} "
 
   end
 

@@ -7,7 +7,7 @@ class Percentage
 
   # return formatted statistics percentage  e.g. 20%
   def to_s
-    "#{@value}#{'%'} "
+    "#{( "%.f" % @value )}#{'%'} "
   end
 
 end
