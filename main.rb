@@ -1,22 +1,19 @@
-require_relative 'point.rb'
+#require_relative 'compass_dice'
 require_relative 'die.rb'
-require_relative 'kangaroo.rb'
 require_relative 'grid.rb'
-class Main
- grid=Grid.new
+require_relative 'kangaroo.rb'
+require_relative 'point.rb'
+require_relative 'percentage.rb'
+require_relative 'statistics.rb'
+require_relative 'zigzagaroo.rb'
 
-  puts 'Enter dimension of the Grid for Part I(>=1):'
-  grid.dimension = gets.to_i
+grid=Grid.new
 
-  dice=Die.new
-
-
-
-  45.times do  dice.throw
-
-  end
-  dice.to_s
- #   print 'Enter the dimension for grid for PartII(>=1):'
-
-
-end
+puts 'Enter dimension of the Grid for Part I(>=1):'
+grid.dimension = gets.to_i
+#stats = Statistics.new
+dice=Die.new
+skippy= Kangaroo.new grid
+skippy.hop!
+skippy.dice_stats
+#dice.to_s
