@@ -1,5 +1,6 @@
 require_relative 'die.rb'
 require_relative 'percentage.rb'
+require_relative 'compass_dice.rb'
 
 class Statistics
   def initialize
@@ -12,13 +13,10 @@ class Statistics
     case number
       when :north
         @table[:north]+=1
-      when :east
-
-        @table[:east]+=1
-
       when :south
         @table[:south]+=1
-
+      when :east
+        @table[:east]+=1
       else
         @table[:west]+=1
 
@@ -31,15 +29,11 @@ class Statistics
     @total
   end
 
-  def average
-
-
-  end
-
   def north_average
     north =@table.values_at(:north).join.to_f
     north = north/(total_throws)*100
     Percentage.new(north)
+
   end
 
   def east_average
