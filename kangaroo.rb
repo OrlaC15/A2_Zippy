@@ -13,45 +13,31 @@ class Kangaroo
   end
 
   def hop!
-
     until at_home? @grid.dimensions
       begin
 
-        @tmp_point = Point.new
-
+        tmp_point = Point.new
         @coordinates.points_print
-        @tmp_point.x = @coordinates.x
-        @tmp_point.y = @coordinates.y
-        way = @die.throw
+        tmp_point.x = @coordinates.x
+        tmp_point.y = @coordinates.y
+        number = @die.throw
+        tmp_point.move! number
 
-        @tmp_point.move! way
-        if @grid.hit_boundary? @tmp_point
+        if @grid.hit_boundary? tmp_point
           @coordinates.err_msg
         else
-          @coordinates.move! way
-
+          @coordinates.move! number
         end
-        @stats.update_table way
       end
       @steps +=1
-
+      @stats.update_table number
     end
-
     @coordinates.points_print
-
-
+    part1print
   end
 
   def part1print
-    puts " Finished in  #{@steps} steps"
-  end
-
-  def print_hops
-    if @grid.hit_boundary? @tmp_point
-      puts @coordinates.err_msg
-    else
-
-    end
+    puts "Finished in  #{@steps} steps"
   end
 
   def at_home?(dimension)

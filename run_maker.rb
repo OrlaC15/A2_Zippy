@@ -25,11 +25,7 @@ class RunMaker
 
   def createrun
     i = 1
-
-
     while i <= @runs do
-
-
       @skippy= Kangaroo.new @grid
       @zippy= Zigzagaroo.new @grid
       stop_printing do
@@ -57,7 +53,7 @@ class RunMaker
   end
 
   def stats_average
-    puts "\n\n On average Kangaraoo took #{ averagehopsskippy} hops, Zigzagaroo took #{averagehopszippy } hops"
+    puts "\nOn average Kangaraoo took #{averagehopsskippy} hops, Zigzagaroo took #{averagehopszippy} hops"
   end
 
   def stop_printing
