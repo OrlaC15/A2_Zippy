@@ -1,23 +1,27 @@
 require 'test/unit'
+require_relative 'grid.rb'
+require_relative 'point.rb'
 
 class GridTest < Test::Unit::TestCase
 
-  # Called before every test method runs. Can be used
-  # to set up fixture information.
-  def setup
-    # Do nothing
+  def test_initialize
+    grid = Grid.new
+    assert_equal(0, grid.dimensions, "Error the intial value of grid should be (0,0)")
+
   end
 
-  # Called after every test method runs. Can be used to tear
-  # down fixture information.
-
-  def teardown
-    # Do nothing
+  def test_hit_boundry_x?
+    grid = Grid.new  #checked value is (0,0)in initializer
+    tmp_point = Point.new
+    tmp_point.x = -1
+    tmp_point.y = 0
+    assert_boolean((grid.hit_boundary? tmp_point), 'Fails if boundary isnt hit (-1,0)')
   end
-
-  # Fake test
-  def test_fail
-
-    fail('Not implemented')
+  def test_hit_boundry_y?
+    grid = Grid.new  #checked value is (0,0)in initializer
+    tmp_point = Point.new
+    tmp_point.x = 0
+    tmp_point.y = -1
+    assert_boolean((grid.hit_boundary? tmp_point), 'Fails if boundary isnt hit (0,-1)')
   end
 end
