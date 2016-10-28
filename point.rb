@@ -18,17 +18,28 @@ class Point
 
 
   def move!(direction)
-    # puts "Direction #{direction}"
+
     case direction
       when :north
         @y += 1
-      when :east
-        @x += 1
       when :south
         @y -= 1
+      when :east
+        @x += 1
       when :west
         @x -= 1
-      #else
+      when :northeast
+        @x += 1
+        @y += 1
+      when :northwest
+        @x -= 1
+        @y += 1
+      when :southeast
+        @x += 1
+        @y -= 1
+      when :southwest
+          @x -= 1
+          @y -= 1
 
     end
   end
