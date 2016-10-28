@@ -5,7 +5,7 @@ require_relative 'kangaroo.rb'
 require_relative 'point.rb'
 require_relative 'percentage.rb'
 require_relative 'statistics.rb'
-require_relative 'statistics2.rb'
+require_relative 'statistics_two.rb'
 require_relative 'zigzagaroo.rb'
 class RunMaker
   attr_accessor :runs
@@ -32,20 +32,24 @@ class RunMaker
 
       @skippy= Kangaroo.new @grid
       @zippy= Zigzagaroo.new @grid
-     @skippy.hop!
-      @zippy.hop!
-      puts(" Run:#{i}  Kangaraoo #{@skippy.steps } hops, Zigzagaroo #{@zippy.steps } hops" )
+      stop_printing do
+        @skippy.hop!
+        @zippy.hop!
+      end
+      puts(" Run:#{i}  Kangaraoo #{@skippy.steps } hops, Zigzagaroo #{@zippy.steps } hops")
       @totalskippy << @skippy.steps
       @totalzippy <<@zippy.steps
       i +=1
     end
 
   end
+
   def averagehopsskippy
     @totalskippy.inject(0) do |total, items|
       total += items/@runs
     end
   end
+
   def averagehopszippy
     @totalzippy.inject(0) do |total, items|
       total += items/@runs
@@ -53,8 +57,17 @@ class RunMaker
   end
 
   def stats_average
-  puts"\n\n On average Kangaraoo took #{ averagehopsskippy} hops, Zigzagaroo took #{averagehopszippy } hops"
+    puts "\n\n On average Kangaraoo took #{ averagehopsskippy} hops, Zigzagaroo took #{averagehopszippy } hops"
   end
+
+  def stop_printing
+    $stdout = StringIO.new
+    yield
+  ensure
+    $stdout = STDOUT
   end
+
+
+end
 
 

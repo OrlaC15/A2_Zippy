@@ -1,28 +1,35 @@
 require_relative 'die.rb'
 require_relative 'percentage.rb'
-require_relative 'compass_dice.rb'
+#require_relative 'compass_dice.rb'
 
 class Statistics
   def initialize
-    @table= {:north => 0, :east => 0, :south => 0, :west => 0}
+    @table= {:north => 0,:south => 0, :east => 0,:west => 0}
     @total=0
   end
 
   def update_table(number)
-  # puts "Number in table #{number}"
-    case number
-      when :north
-        @table[:north]+=1
-      when :south
-        @table[:south]+=1
-      when :east
-        @table[:east]+=1
-      else
-        @table[:west]+=1
+ # puts "Number in table #{number}"
+  case number
+    when :north
+      @table[:north]+=1
+    when :south
+      @table[:south]+=1
+    when :east
+      @table[:east]+=1
+    when :west
+      @table[:west]+=1
+    when :northeast
+      @table[:northeast]+=1
+    when :northwest
+   @table[:northwest]+=1
+    when :southeast
+      @table[:southeast]+=1
+    else
+      @table[:southwest]+=1
 
-
-    end
-    @total=@total+1
+  end
+  @total=@total+1
   end
 
   def total_throws
@@ -54,10 +61,9 @@ class Statistics
     Percentage.new(south)
   end
 
+
   def print_table
-
     @table.each { |key, value|}
-
   end
 
 end
