@@ -13,48 +13,53 @@ class PointTest < Test::Unit::TestCase
     point = Point.new
     point.move! :north
     assert_equal(1, point.y)
-    end
-    def test_move_south
-      point = Point.new
-      point.move! :south
-      assert_equal(-1, point.y)
-    end
+  end
+
+  def test_move_south
+    point = Point.new
+    point.move! :south
+    assert_equal(-1, point.y)
+  end
+
   def test_move_east
     point = Point.new
     point.move! :east #(1,0)
     assert_equal(1, point.x)
   end
+
   def test_move_west
     point = Point.new
     point.move! :west #(-1,0)
     assert_equal(-1, point.x)
   end
+
   def test_move_northwest
     point = Point.new
     point.move! :northwest
     assert_equal(-1, point.x)
     assert_equal(1, point.y)
   end
+
   def test_move_north_eest
     point = Point.new
     point.move! :northeast
     assert_equal(1, point.x)
     assert_equal(1, point.y)
   end
+
   def test_move_southwest
     point = Point.new
     point.move! :southwest
     assert_equal(-1, point.x)
     assert_equal(-1, point.y)
   end
+
   def test_move_southeast
     point = Point.new
     point.move! :southeast
     assert_equal(1, point.x)
     assert_equal(-1, point.y)
   end
-
-
 
   def test_print
     point = Point.new

@@ -38,8 +38,8 @@ class Point
         @x += 1
         @y -= 1
       when :southwest
-          @x -= 1
-          @y -= 1
+        @x -= 1
+        @y -= 1
 
     end
   end

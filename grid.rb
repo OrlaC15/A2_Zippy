@@ -8,7 +8,6 @@ class Grid
   end
 
   def dimension=(new_dimension)
-
     @dimensions = new_dimension
   end
 

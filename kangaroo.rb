@@ -36,9 +36,7 @@ class Kangaroo
     puts "Finished in  #{@steps} steps"
   end
 
-  def part1print
-    puts "Finished in  #{@steps} steps"
-  end
+
 
   def at_home?(dimension)
     if @coordinates.x == dimension-1 && @coordinates.y == dimension-1

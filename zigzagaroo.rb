@@ -8,7 +8,7 @@ class Zigzagaroo < Kangaroo
     super(grid)
     @die = CompassDice.new
     @stats=StatisticsTwo.new
-   end
+  end
 
 
   def dice_stats

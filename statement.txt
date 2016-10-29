@@ -2,14 +2,10 @@
 
 
 Part 1
-Part one is working
-
 Working as it should
-
-
 
 Part 2
 Working as it should
 
-Test
-Still working on tests
+Testing
+Test-working

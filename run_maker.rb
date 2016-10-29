@@ -2,7 +2,8 @@ require_relative 'grid.rb'
 require_relative 'kangaroo.rb'
 require_relative 'zigzagaroo.rb'
 class RunMaker
-  attr_accessor :runs
+  attr_accessor :runs, :totalskippy, :totalzippy
+
 
   def initialize(grid)
     @grid = grid

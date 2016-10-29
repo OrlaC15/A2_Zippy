@@ -10,5 +10,5 @@ class ZigzagarooTest < Test::Unit::TestCase
     assert_not_nil(zippy.stats)
     assert_not_nil(zippy.steps)
 
-end
   end
+end
