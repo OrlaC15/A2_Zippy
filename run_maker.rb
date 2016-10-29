@@ -1,11 +1,5 @@
-require_relative 'compass_dice.rb'
-require_relative 'die.rb'
 require_relative 'grid.rb'
 require_relative 'kangaroo.rb'
-require_relative 'point.rb'
-require_relative 'percentage.rb'
-require_relative 'statistics.rb'
-require_relative 'statistics_two.rb'
 require_relative 'zigzagaroo.rb'
 class RunMaker
   attr_accessor :runs

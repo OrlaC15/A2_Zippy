@@ -1,23 +1,27 @@
 require 'test/unit'
-
+require_relative 'kangaroo.rb'
+require_relative 'statistics.rb'
+require_relative 'grid.rb'
 class KangarooTest < Test::Unit::TestCase
+  def test_initialize
+   skippy = Kangaroo.new 1
+    assert_not_nil(skippy.die)
+    assert_not_nil(skippy.coordinates)
+    assert_not_nil(skippy.grid)
+    assert_not_nil(skippy.stats)
+    assert_not_nil(skippy.steps)
 
-  # Called before every test method runs. Can be used
-  # to set up fixture information.
-  def setup
-    # Do nothing
   end
 
-  # Called after every test method runs. Can be used to tear
-  # down fixture information.
+  def test_hop!
 
-  def teardown
-    # Do nothing
-  end
+    skippy = Kangaroo.new Grid.new.dimensions
+   skippy.hop!
 
-  # Fake test
-  def test_fail
+ end
 
-    fail('Not implemented')
+  def test_at_home?
+    skippy = Kangaroo.new 1
+    assert(!(skippy.at_home? 0), 'Skippy shouldnt be at home ')
   end
 end

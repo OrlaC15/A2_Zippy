@@ -1,6 +1,11 @@
 require 'test/unit'
-require_relative 'die_test.rb'
+require_relative 'compass_test.rb'
+require_relative 'die_test.rb'#
 require_relative 'grid_test.rb'
 require_relative 'kangaroo_test.rb'
 require_relative 'point_test.rb'
 require_relative 'percentage_test.rb'
+require_relative 'statistics_test.rb'
+require_relative 'statisticstwo_test.rb'
+#require_relative 'runmaker_test.rb'
+require_relative 'zigzagaroo_test.rb'

@@ -2,7 +2,7 @@ require_relative 'point.rb'
 require_relative 'die.rb'
 
 class Kangaroo
-  attr_accessor :coordinates, :die, :grid, :steps
+  attr_accessor :coordinates, :die, :grid, :stats,:steps
 
   def initialize(grid)
     @die = Die.new
@@ -33,7 +33,7 @@ class Kangaroo
       @stats.update_table number
     end
     @coordinates.points_print
-    part1print
+    puts "Finished in  #{@steps} steps"
   end
 
   def part1print

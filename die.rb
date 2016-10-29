@@ -1,4 +1,3 @@
-require_relative 'statistics.rb'
 class Die
   attr_accessor :side
 

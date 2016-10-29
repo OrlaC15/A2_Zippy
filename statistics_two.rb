@@ -1,5 +1,6 @@
 require_relative 'percentage.rb'
 require_relative 'compass_dice.rb'
+require_relative 'statistics.rb'
 class StatisticsTwo<Statistics
     def initialize
       super

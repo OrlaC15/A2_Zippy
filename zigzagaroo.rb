@@ -1,5 +1,4 @@
 require_relative 'kangaroo.rb'
-require_relative 'point.rb'
 require_relative 'compass_dice.rb'
 require_relative 'statistics_two.rb'
 class Zigzagaroo < Kangaroo
