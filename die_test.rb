@@ -1,23 +1,23 @@
 require 'test/unit'
-
+require_relative 'die.rb'
 class DieTest < Test::Unit::TestCase
-
-  # Called before every test method runs. Can be used
-  # to set up fixture information.
   def setup
-    # Do nothing
+    @die = Die.new
   end
 
-  # Called after every test method runs. Can be used to tear
-  # down fixture information.
-
-  def teardown
-    # Do nothing
+  def test_roll
+    number=@die.roll
+    assert(number < 4, "roll mistake value in #{number}")
   end
 
-  # Fake test
-  def test_fail
+  def test_throw
+    sides = [:north, :east, :south, :west]
+    some_side= @die.throw
 
-    fail('Not implemented')
+    sides.each do
+      assert(sides.include? some_side)
+    end
+
   end
+
 end

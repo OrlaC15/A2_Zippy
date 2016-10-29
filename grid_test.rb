@@ -11,14 +11,15 @@ class GridTest < Test::Unit::TestCase
   end
 
   def test_hit_boundry_x?
-    grid = Grid.new  #checked value is (0,0)in initializer
+    grid = Grid.new
     tmp_point = Point.new
     tmp_point.x = -1
     tmp_point.y = 0
     assert_boolean((grid.hit_boundary? tmp_point), 'Fails if boundary isnt hit (-1,0)')
   end
+
   def test_hit_boundry_y?
-    grid = Grid.new  #checked value is (0,0)in initializer
+    grid = Grid.new
     tmp_point = Point.new
     tmp_point.x = 0
     tmp_point.y = -1
